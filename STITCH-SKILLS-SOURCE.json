@@ -1,0 +1,23 @@
+{
+  "source": "https://github.com/google-labs-code/stitch-skills",
+  "downloaded": "2026-10-27",
+  "installation": "project/.agents/skills/",
+  "skills": [
+    "code-to-design",
+    "design-md",
+    "enhance-prompt",
+    "extract-design-md",
+    "extract-static-html",
+    "generate-design",
+    "manage-design-system",
+    "react-components",
+    "react-native",
+    "react-vite-dashboard",
+    "remotion",
+    "shadcn-ui",
+    "stitch-loop",
+    "taste-design",
+    "upload-to-stitch"
+  ],
+  "note": "Copied with bundled resources; MCP authentication is configured separately."
+}
