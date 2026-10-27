@@ -64,7 +64,7 @@
 @media(max-width:700px){.day2-nav #courseDay{width:100%;margin:0;flex-basis:100%}.day2-nav [data-d2-step]{flex:1;text-align:center}.d2{padding:26px 18px 45px}.d2-layout{grid-template-columns:minmax(0,1fr)}.d2-box{padding:20px}.d2-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.d2-rail{gap:5px}.d2-rail span{font-size:10px;padding:6px 9px}.d2-fix{flex-direction:column}.d2-next{margin-left:0}.switcher [data-d2-step]{padding:8px 10px;font-size:12px}.d2-thumb{height:132px}.d2-end{align-items:start}}
 </style><link rel="stylesheet" href="stitch-workshop.css"></head><body>
 <div class="workshop"><b>AI WEBSITE WORKSHOP · DAY 1 / LESSONS 1–3</b><small>교육용 가상 기업 · 실제 영업 및 문의 접수 없음</small></div>
-<div class="switcher" aria-label="수업 화면 선택"><label class="label" for="courseDay">수업 선택</label><select id="courseDay" aria-label="수업 일차"><option value="1">1일차 · 기획하기</option><option value="2">2일차 · 만들기</option><option value="3">3일차 · 연결·공개</option></select><span class="tab" id="day3LessonLabel" hidden>1차시 Git과 Node.js</span><button type="button" class="tab" data-d3-step="1" aria-pressed="true" hidden>1차시 Git과 Node.js</button><button type="button" class="tab" data-d3-step="2" aria-pressed="false" hidden>2차시 문의 접수 & 대시보드</button><button type="button" class="tab" data-d3-step="3" aria-pressed="false" hidden>3차시 IDE와 GitHub 연결</button><button type="button" class="tab" data-d3-step="4" aria-pressed="false" hidden>4차시 GitHub와 Vercel 배포</button><button class="tab" data-mode="company" aria-pressed="true">완성 예시</button><button class="tab" data-mode="compare" aria-pressed="false">수정 전후 비교</button><button class="tab" data-mode="edit" aria-pressed="false">1차시 소개</button><button class="tab" data-mode="lesson2" aria-pressed="false">2차시 구성</button><button class="tab" data-mode="lesson3" aria-pressed="false">3차시 PRD</button><button type="button" class="tab" data-d2-step="1" aria-pressed="true" hidden>1교시 홈페이지</button><button type="button" class="tab" data-d2-step="2" aria-pressed="false" hidden>2교시 디자인</button><button type="button" class="tab" data-d2-step="3" aria-pressed="false" hidden>3교시 Stitch</button><button type="button" class="tab" data-d2-step="4" aria-pressed="false" hidden>4교시 문의</button></div>
+<div class="switcher" aria-label="수업 화면 선택"><label class="label" for="courseDay">수업 선택</label><select id="courseDay" aria-label="수업 일차"><option value="1">1일차 · 기획하기</option><option value="2">2일차 · 만들기</option><option value="3">3일차 · 연결·공개</option></select><span class="tab" id="day3LessonLabel" hidden>1차시 Git과 Node.js</span><button type="button" class="tab" data-d3-step="1" aria-pressed="true" hidden>1차시 Git과 Node.js</button><button type="button" class="tab" data-d3-step="2" aria-pressed="false" hidden>2차시 문의 접수 & 대시보드</button><button type="button" class="tab" data-d3-step="3" aria-pressed="false" hidden>3차시 IDE와 GitHub 연결</button><button type="button" class="tab" data-d3-step="4" aria-pressed="false" hidden>4차시 GitHub와 Vercel 배포</button><button type="button" class="tab" data-d3-step="5" aria-pressed="false" hidden>5차시 견적서 Apps Script</button><button class="tab" data-mode="company" aria-pressed="true">완성 예시</button><button class="tab" data-mode="compare" aria-pressed="false">수정 전후 비교</button><button class="tab" data-mode="edit" aria-pressed="false">1차시 소개</button><button class="tab" data-mode="lesson2" aria-pressed="false">2차시 구성</button><button class="tab" data-mode="lesson3" aria-pressed="false">3차시 PRD</button><button type="button" class="tab" data-d2-step="1" aria-pressed="true" hidden>1교시 홈페이지</button><button type="button" class="tab" data-d2-step="2" aria-pressed="false" hidden>2교시 디자인</button><button type="button" class="tab" data-d2-step="3" aria-pressed="false" hidden>3교시 Stitch</button><button type="button" class="tab" data-d2-step="4" aria-pressed="false" hidden>4교시 문의</button></div>
 <main>
 <div id="company" class="mode active"><div class="wrap">
 <nav class="nav" aria-label="예시 기업 메뉴"><div class="brand"><span class="mark" aria-hidden="true"></span>모아워크</div><div class="navlinks"><a href="#about">모아워크 소개</a><a href="#service">서비스</a><a href="#faq">궁금한 점</a><a class="smallbtn" href="#contact">상담 준비하기 ↗</a></div></nav>
@@ -1080,6 +1080,728 @@ git push origin main</code></pre>
 
 </div>
 </div>
+
+<!-- 3일차 5차시: 구글 앱스 스크립트(Google Apps Script) 스마트 견적서 자동화 & 웹앱 만들기 -->
+<div id="day3_panel5" class="d3-panel" hidden>
+<div class="d3 d3-l2">
+<span class="badge">DAY 03 / LESSON 05 · 업무 자동화 & 웹앱 구축</span>
+<h1>구글 앱스 스크립트로<br>스마트 견적서 자동화 & 웹앱 만들기</h1>
+<p class="intro">구글 시트에 서식과 계산 수식이 들어간 견적서를 자동으로 생성하고, 나아가 브라우저에서 실시간으로 견적을 입력해 A4 인쇄 및 PDF로 저장할 수 있는 견적서 웹앱을 단계별로 실습합니다.</p>
+
+<div class="feedback">
+<strong>5차시 실습 구성 요약</strong>
+<p>실습 1: 구글 시트 견적서 자동 생성 스크립트 (createQuotation) · 서식 & 수식 자동 계산<br>
+실습 2: 실시간 계산 및 A4 인쇄/PDF 견적서 웹앱 (Code.gs + Index.html) · 배포 및 출력</p>
+</div>
+
+<!-- 2개 트랙 안내 바 -->
+<div class="pipeline-flow" style="grid-template-columns: 1fr 1fr">
+  <div class="pipeline-node"><span class="num">TRACK 01</span><strong>시트 견적서 자동 생성</strong><small>Apps Script 매크로 · 수식 자동 계산</small></div>
+  <div class="pipeline-node"><span class="num">TRACK 02</span><strong>견적서 웹앱 만들기</strong><small>실시간 미리보기 & A4 인쇄/PDF 저장</small></div>
+</div>
+
+<nav class="checklist" aria-label="5차시 학습 목차">
+  <a href="#d3l5Track1">실습 1 · 시트 견적서 자동 생성 (createQuotation)</a>
+  <a href="#d3l5Track2">실습 2 · 견적서 웹앱 만들기 (Code.gs + Index.html)</a>
+</nav>
+
+<!-- ========================================== -->
+<!-- [실습 1] 구글 시트 견적서 자동 생성 스크립트 -->
+<!-- ========================================== -->
+<div class="d3-section" id="d3l5Track1">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">1</span>
+      <div>
+        <h2>실습 1 · 구글 시트 견적서 자동 생성 스크립트</h2>
+        <p class="hint" style="margin:4px 0 0">버튼 한 번만 누르면 시트에 예쁜 기업용 견적서 서식과 계산 수식이 1초 만에 만들어집니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 수량과 단가를 바꾸면 금액이 자동으로 재계산됩니다!</strong>
+    스크립트가 단순히 글자만 넣는 것이 아니라, 구글 시트의 수식(<code>=IF(...)</code>, <code>=SUM(...)</code>)을 셀에 함께 심어주기 때문에 수량을 100개에서 200개로 바꾸면 스크립트를 다시 실행하지 않아도 견적 금액이 실시간으로 자동 계산됩니다.
+  </div>
+
+  <!-- 단계별 안내 카드 1~6단계 -->
+  <div class="d3-card">
+    <h3>따라 하기 6단계 순서</h3>
+    <ol class="d3-flow" style="grid-template-columns:repeat(3,1fr)">
+      <li><strong>1단계: 빈 시트 생성</strong><small><a href="https://sheets.google.com" target="_blank" rel="noopener noreferrer">sheets.google.com</a> 접속 후 새 시트 만들기 (이름: 우리 회사 견적서 실습)</small></li>
+      <li><strong>2단계: Apps Script 열기</strong><small>상단 메뉴 <strong>[확장 프로그램] → [Apps Script]</strong> 클릭 후 기존 Code.gs 내용 비우기</small></li>
+      <li><strong>3단계: 아래 코드 붙여넣기</strong><small>아래의 <code>createQuotation</code> 전체 코드를 복사해서 붙여넣기</small></li>
+      <li><strong>4단계: 저장 및 실행</strong><small>저장 아이콘 누르고 <strong>createQuotation</strong> 선택 후 <strong>▶ 실행</strong> 클릭 (권한 승인 허용)</small></li>
+      <li><strong>5단계: 생성 결과 확인</strong><small>시트에 <code>견적서_날짜_시간</code> 시트 생성 확인 및 B11 수량 200개로 변경 테스트</small></li>
+      <li><strong>6단계: 내 사업으로 커스텀</strong><small>코드 상단의 <code>회사정보</code>와 <code>견적품목</code>을 내 사업 내용으로 변경 후 재실행</small></li>
+    </ol>
+  </div>
+
+  <!-- createQuotation 전체 코드 박스 -->
+  <div class="d3-card" style="margin-top:20px">
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">Google Apps Script (Code.gs) · 견적서 자동 생성 코드</span>
+        <button type="button" class="copy-btn" data-copy-target="codeCreateQuotation">createQuotation 전체 복사 ↗</button>
+      </div>
+      <pre><code id="codeCreateQuotation">/**
+ * @OnlyCurrentDoc
+ */
+
+// ── 내 회사 정보: 나중에 이 부분을 수정하세요 ──
+const 회사정보 = {
+  회사명: "리턴랩",
+  대표자: "홍길동",
+  연락처: "010-1234-5678",
+  고객명: "주식회사 샘플",
+  대표색상: "#2563EB"
+};
+
+// [품목, 수량, 단가, 비고]
+// 아래 가격은 실습용 가상 금액입니다.
+const 견적품목 = [
+  ["업사이클링 파우치", 100, 12000, "기본형"],
+  ["로고 인쇄", 100, 1000, "단색 인쇄"],
+  ["포장 서비스", 100, 500, "개별 포장"]
+];
+
+// ── 이 함수를 실행하면 견적서가 만들어집니다 ──
+function createQuotation() {
+  const 문서 = SpreadsheetApp.getActiveSpreadsheet();
+  const 시간대 = 문서.getSpreadsheetTimeZone();
+  const 현재 = new Date();
+  const 오늘 = Utilities.formatDate(현재, 시간대, "yyyy-MM-dd");
+  const 생성시간 = Utilities.formatDate(현재, 시간대, "yyyyMMdd_HHmmss");
+
+  // 다시 실행해도 기존 견적서를 덮어쓰지 않습니다.
+  const 기본이름 = "견적서_" + 생성시간;
+  let 시트이름 = 기본이름;
+  let 번호 = 2;
+  while (문서.getSheetByName(시트이름)) {
+    시트이름 = 기본이름 + "_" + 번호;
+    번호++;
+  }
+  const 시트 = 문서.insertSheet(시트이름);
+
+  // 1. 전체 기본 디자인
+  시트.setHiddenGridlines(true);
+  시트.setTabColor(회사정보.대표색상);
+  시트.getRange("A1:E22")
+    .setFontFamily("Arial")
+    .setFontSize(11)
+    .setVerticalAlignment("middle");
+
+  시트.setColumnWidth(1, 230);
+  시트.setColumnWidth(2, 80);
+  시트.setColumnWidth(3, 120);
+  시트.setColumnWidth(4, 140);
+  시트.setColumnWidth(5, 160);
+  시트.setRowHeights(1, 22, 30);
+
+  // 2. 제목
+  시트.getRange("A1:E2")
+    .merge()
+    .setValue("견 적 서")
+    .setFontSize(26)
+    .setFontWeight("bold")
+    .setFontColor("#FFFFFF")
+    .setBackground(회사정보.대표색상)
+    .setHorizontalAlignment("center");
+
+  // 3. 회사·고객 정보
+  const 기본정보 = [
+    ["공급자", 회사정보.회사명],
+    ["대표자", 회사정보.대표자],
+    ["연락처", 회사정보.연락처],
+    ["수신처", 회사정보.고객명 + " 귀하"],
+    ["견적일", 오늘]
+  ];
+
+  기본정보.forEach(function(정보, 인덱스) {
+    const 행 = 인덱스 + 4;
+    시트.getRange(행, 1)
+      .setValue(정보[0])
+      .setFontWeight("bold")
+      .setBackground("#EFF6FF");
+    시트.getRange(행, 2, 1, 4)
+      .merge()
+      .setNumberFormat("@")
+      .setValue(정보[1]);
+  });
+
+  // 4. 품목 표의 머리글
+  시트.getRange("A10:E10")
+    .setValues([["품목", "수량", "단가", "금액", "비고"]])
+    .setBackground(회사정보.대표색상)
+    .setFontColor("#FFFFFF")
+    .setFontWeight("bold")
+    .setHorizontalAlignment("center");
+
+  // 5. 품목 입력: 최대 5개
+  if (견적품목.length > 5) {
+    throw new Error("견적품목은 최대 5개까지 입력해 주세요.");
+  }
+  견적품목.forEach(function(품목, 인덱스) {
+    const 행 = 인덱스 + 11;
+    시트.getRange(행, 1, 1, 3)
+      .setValues([[품목[0], 품목[1], 품목[2]]]);
+    시트.getRange(행, 5).setValue(품목[3]);
+  });
+
+  // 6. 금액 계산식: 수량 × 단가
+  // 빈 행에도 수식을 넣어두어 품목을 추가할 수 있습니다.
+  for (let 행 = 11; 행 <= 15; 행++) {
+    시트.getRange(행, 4).setFormula(
+      '=IF(OR(B' + 행 + '="",C' + 행 + '=""),"",B' + 행 + '*C' + 행 + ')'
+    );
+  }
+  시트.getRange("B11:D15").setNumberFormat("#,##0");
+  시트.getRange("B11:B15").setHorizontalAlignment("center");
+  시트.getRange("C11:D15").setHorizontalAlignment("right");
+  시트.getRange("A10:E15").setBorder(
+    true, true, true, true, true, true, "#CBD5E1", SpreadsheetApp.BorderStyle.SOLID
+  );
+
+  // 7. 합계
+  시트.getRange("A17:C17")
+    .merge()
+    .setValue("견적 합계")
+    .setFontWeight("bold");
+  시트.getRange("D17")
+    .setFormula("=SUM(D11:D15)")
+    .setNumberFormat("#,##0")
+    .setFontWeight("bold")
+    .setHorizontalAlignment("right");
+  시트.getRange("E17").setValue("원");
+  시트.getRange("A17:E17")
+    .setBackground("#DBEAFE")
+    .setFontSize(13);
+
+  // 8. 안내 문구
+  시트.getRange("A18:E18")
+    .merge()
+    .setValue("※ 부가세 별도 · 실습용 가상 견적서입니다.")
+    .setFontColor("#64748B")
+    .setFontSize(10);
+  시트.getRange("A20:E20")
+    .merge()
+    .setValue("견적 조건: 유효기간 14일 / 배송비 별도")
+    .setFontSize(10);
+  시트.getRange("A22:E22")
+    .merge()
+    .setValue("문의해 주셔서 감사합니다.")
+    .setHorizontalAlignment("center")
+    .setFontColor(회사정보.대표색상);
+
+  // 9. 생성된 견적서 표시
+  문서.setActiveSheet(시트);
+  SpreadsheetApp.flush();
+  문서.toast("견적서가 생성되었습니다.", "완료", 5);
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- 자동 계산 검증 표 -->
+  <div class="d3-card" style="margin-top:20px">
+    <h3>5단계 · 수량 변경 자동 계산 검증표</h3>
+    <p>생성된 견적서 시트에서 <strong>B11 셀의 수량을 100에서 200으로</strong> 바꿔보세요. 수식이 즉시 계산을 갱신합니다.</p>
+    <div class="d3-table">
+      <table>
+        <thead>
+          <tr>
+            <th>확인 항목</th><th>변경 전 (기본값)</th><th>변경 후 (B11 셀 200 입력 시)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>파우치 수량 (B11)</td><td>100</td><td><strong>200</strong></td></tr>
+          <tr><td>파우치 금액 (D11)</td><td>1,200,000원</td><td><strong>2,400,000원</strong> (자동 계산)</td></tr>
+          <tr><td>견적 합계 (D17)</td><td>1,350,000원</td><td><strong>2,550,000원</strong> (자동 계산)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- [실습 2] 견적서 웹앱 만들기 (Code.gs + Index.html) -->
+<!-- ========================================== -->
+<div class="d3-section" id="d3l5Track2">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">2</span>
+      <div>
+        <h2>실습 2 · 실시간 계산 & A4 인쇄/PDF 견적서 웹앱</h2>
+        <p class="hint" style="margin:4px 0 0">브라우저에서 직접 견적 항목을 입력하면 A4 견적서가 실시간으로 완성되고 PDF로 저장할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-grid">
+    <article class="d3-card">
+      <h3>웹앱의 주요 기능</h3>
+      <ul>
+        <li><strong>기본 정보 입력</strong>: 수신, 견적명, 견적날짜, 유효기간 실시간 반영</li>
+        <li><strong>품목 자유 관리</strong>: 품목 추가(최대 20개), 품목 삭제, 세부내용 지원</li>
+        <li><strong>실시간 자동 계산</strong>: 공급가 + 부가세 10% + 최종금액 자동 산출</li>
+        <li><strong>한글 금액 자동 표기</strong>: '일금 삼백육십육만삼천원정' 자동 생성</li>
+        <li><strong>A4 인쇄 & PDF 저장</strong>: 용지 맞춤 스타일 탑재로 원클릭 PDF 출력</li>
+      </ul>
+    </article>
+    <article class="d3-card">
+      <h3>Apps Script 웹앱 배포 순서</h3>
+      <ol style="padding-left:18px;font-size:14px;line-height:1.8;margin:8px 0">
+        <li>Apps Script 좌측 <code>+</code> 클릭 → <strong>[HTML]</strong> 선택 → 이름: <code>Index</code> 입력</li>
+        <li>생성된 <code>Index.html</code>에 아래 두 번째 코드 붙여넣기</li>
+        <li><code>Code.gs</code>에 아래 첫 번째 코드 붙여넣기</li>
+        <li>우측 상단 <strong>[배포] → [새 배포] → 유형: [웹 앱]</strong> 선택</li>
+        <li>실행 사용자: <strong>나</strong>, 액세스 권한: <strong>나만 (또는 모든 사용자)</strong> 설정 후 배포!</li>
+      </ol>
+    </article>
+  </div>
+
+  <!-- 웹앱 코드 1: Code.gs -->
+  <div class="d3-card" style="margin-top:20px">
+    <h3>① Code.gs 전체 코드 (서버 스크립트)</h3>
+    <p>공급자 정보 전달 및 웹앱 화면을 브라우저에 표시합니다.</p>
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">Code.gs 전체 코드</span>
+        <button type="button" class="copy-btn" data-copy-target="codeWebAppGs">Code.gs 복사 ↗</button>
+      </div>
+      <pre><code id="codeWebAppGs">// 공급자 정보는 교육용 가상 데이터입니다.
+// 실제 사용 시 아래 내용을 수정하세요.
+const SUPPLIER = {
+  company: '온빛 크리에이티브',
+  owner: '김가온',
+  businessNumber: '000-00-00000 (가상)',
+  address: '부산광역시 해운대구 가상로 123, 3층 (가상 주소)',
+  phone: '010-0000-0000',
+  email: 'hello@example.com'
+};
+
+// 웹앱 화면을 표시합니다.
+function doGet() {
+  const page = HtmlService.createTemplateFromFile('Index');
+  page.supplierJson = JSON.stringify(SUPPLIER)
+    .replace(/&lt;/g, '\\u003c')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+
+  return page.evaluate()
+    .setTitle('우리 회사 견적서 만들기')
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- 웹앱 코드 2: Index.html -->
+  <div class="d3-card" style="margin-top:20px">
+    <h3>② Index.html 전체 코드 (웹앱 프론트엔드 + 스타일 + 계산 로직)</h3>
+    <p>왼쪽 파일 목록의 <code>Index.html</code> 내용을 모두 지우고 아래 코드를 그대로 붙여넣습니다.</p>
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">Index.html 전체 코드</span>
+        <button type="button" class="copy-btn" data-copy-target="codeWebAppHtml">Index.html 전체 복사 ↗</button>
+      </div>
+      <pre style="max-height:480px;overflow-y:auto"><code id="codeWebAppHtml">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;base target="_top"&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;우리 회사 견적서 만들기&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;style&gt;
+    :root { --ink: #182c3b; --accent: #087f78; --line: #dce3e7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #edf1f3; color: var(--ink); font: 14px Arial, "Malgun Gothic", sans-serif; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 10px 14px; color: var(--ink); font-weight: 600; }
+    button:hover { background: #eff8f7; }
+    button:focus-visible, input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .primary:hover { background: #066b66; }
+    .topbar { background: #142c3b; color: white; padding: 22px 32px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .topbar h1 { font-size: 22px; margin: 5px 0; }
+    .eyebrow { color: #90d3cb; font-size: 11px; letter-spacing: 2px; }
+    .topbar p { margin: 5px 0; color: #c2d0d9; font-size: 12px; }
+    .layout { display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 24px; padding: 24px; max-width: 1640px; margin: auto; align-items: start; }
+    .editor { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; margin: 0 0 18px; font-size: 17px; }
+    .step { color: var(--accent); font-size: 12px; margin-right: 8px; }
+    .field { display: block; margin-bottom: 14px; }
+    .field span { display: block; font-size: 12px; font-weight: bold; margin-bottom: 7px; }
+    .field input, .field textarea { width: 100%; padding: 10px 11px; border: 1px solid #cbd5dc; border-radius: 7px; background: #fff; color: #142c3b; }
+    .field textarea { resize: vertical; min-height: 76px; }
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+    .item-card { padding: 14px; background: #f6f8fa; border: 1px solid var(--line); border-radius: 9px; margin: 12px 0; }
+    .item-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .item-head button { font-size: 12px; color: #b43c3c; padding: 5px 9px; }
+    .item-card .field { margin-bottom: 10px; }
+    .item-card .twocol .field { margin-bottom: 0; }
+    .muted { color: #647581; font-size: 12px; line-height: 1.7; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .error { color: #ae3030; line-height: 1.6; font-size: 13px; min-height: 20px; margin: 10px 0; }
+    .preview-area { min-width: 0; }
+    .preview-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
+    .preview-bar strong { font-size: 14px; }
+    .preview-scroll { overflow: auto; padding: 2px 2px 20px; }
+    .paper { width: 210mm; min-height: 287mm; margin: 0 auto; background: white; padding: 17mm 14mm 15mm; box-shadow: 0 4px 22px #122a3b16; color: #111; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+    .paper h2 { font-size: 26px; letter-spacing: 5px; margin: 0 0 20px; font-weight: 800; }
+    .meta { display: grid; grid-template-columns: 43% 50%; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .meta-group { border-top: 1.5px solid #555; border-bottom: 1.5px solid #555; padding: 7px 5px; min-height: 124px; }
+    .meta-line { display: grid; grid-template-columns: 65px minmax(0, 1fr); gap: 5px; margin: 3px 0; }
+    .meta-label { letter-spacing: 2px; }
+    .fake { color: #777; font-size: 9px; margin-top: 5px; }
+    .total-banner { border: 2px solid #111; display: grid; grid-template-columns: 62px minmax(0, 1fr) 85px; gap: 7px; padding: 8px 9px; align-items: center; margin-bottom: 16px; font-size: 10px; }
+    .total-banner strong { text-align: center; }
+    .total-banner .vat { text-align: right; font-size: 9px; }
+    .quote-table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 10px; }
+    .quote-table th { background: #f1f1f1; font-weight: 600; border-top: 1.4px solid #555; border-bottom: 1px solid #555; padding: 6px 3px; text-align: center; }
+    .quote-table td { border-bottom: 1px solid #c9c9c9; padding: 6px 4px; height: 31px; vertical-align: middle; white-space: pre-wrap; }
+    .quote-table th + th, .quote-table td + td { border-left: 1px solid #777; }
+    .quote-table td.num { text-align: right; white-space: normal; font-variant-numeric: tabular-nums; }
+    .quote-table td.center { text-align: center; }
+    .quote-table tfoot td { background: #f1f1f1; border-top: 1.4px solid #555; border-bottom: 1.4px solid #555; font-weight: bold; }
+    .empty-note { text-align: center; color: #777; letter-spacing: 4px; }
+    .summary { width: 50%; margin: 18px 0 0 auto; border-collapse: collapse; font-size: 10px; }
+    .summary td { padding: 3px 6px; border-top: 1px solid #ccc; }
+    .summary tr:first-child td { border-top: 1px solid #444; }
+    .summary tr:last-child td { border-bottom: 1px solid #444; font-weight: bold; }
+    .summary td:first-child { background: #f2f2f2; text-align: center; letter-spacing: 3px; width: 40%; }
+    .summary td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+    .notes { margin-top: 38px; font-size: 10px; }
+    .notes h3 { font-size: 11px; border-bottom: 1px solid #555; padding-bottom: 5px; margin: 0 0 8px; }
+    .notes-body { white-space: pre-wrap; }
+    .paper-footer { margin-top: 25px; border-top: 1px solid #ddd; padding-top: 8px; color: #888; font-size: 9px; display: flex; justify-content: space-between; }
+    .quote-table tr { break-inside: avoid; }
+    .summary, .notes, .total-banner, .meta { break-inside: avoid; }
+    @media (max-width: 1200px) { .layout { grid-template-columns: 340px minmax(0, 1fr); padding: 16px; gap: 16px; } .editor { padding: 18px; } }
+    @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } .topbar { padding: 20px; } .topbar p { max-width: 240px; } .preview-bar { align-items: flex-start; } .paper { margin: 0; } .preview-scroll { max-width: 100%; } }
+    @page { size: A4 portrait; margin: 10mm; }
+    @media print {
+      html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
+      .topbar, .editor, .preview-bar { display: none !important; }
+      .layout { display: block; margin: 0; padding: 0; max-width: none; }
+      .preview-scroll { overflow: visible; padding: 0; }
+      .paper { width: 100%; min-height: 0; margin: 0; padding: 7mm 4mm 5mm; box-shadow: none; font-size: 10px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .quote-table thead { display: table-header-group; }
+      .quote-table tfoot { display: table-row-group; }
+      .paper h2 { margin-bottom: 18px; }
+      .notes { margin-top: 26px; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="topbar"&gt;
+    &lt;div&gt;
+      &lt;div class="eyebrow"&gt;SMALL BUSINESS TOOLKIT&lt;/div&gt;
+      &lt;h1&gt;우리 회사 견적서 만들기&lt;/h1&gt;
+      &lt;p&gt;견적 정보를 입력하고 A4 견적서로 출력하세요.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span&gt;APPS SCRIPT 실습&lt;/span&gt;
+  &lt;/header&gt;
+  &lt;main class="layout"&gt;
+    &lt;form class="editor" id="quoteForm"&gt;
+      &lt;h2 class="section-title"&gt;
+        &lt;span&gt;&lt;span class="step"&gt;01&lt;/span&gt; 견적 기본 정보&lt;/span&gt;
+        &lt;button type="button" id="sampleButton"&gt;예시 불러오기&lt;/button&gt;
+      &lt;/h2&gt;
+      &lt;label class="field"&gt;
+        &lt;span&gt;수신 *&lt;/span&gt;
+        &lt;input id="recipient" required maxlength="100" placeholder="예: 주식회사 샘플 담당자 귀하"&gt;
+      &lt;/label&gt;
+      &lt;label class="field"&gt;
+        &lt;span&gt;견적명 *&lt;/span&gt;
+        &lt;input id="quoteTitle" required maxlength="120" placeholder="예: IoT 교육 프로그램 운영"&gt;
+      &lt;/label&gt;
+      &lt;div class="twocol"&gt;
+        &lt;label class="field"&gt;
+          &lt;span&gt;견적날짜 *&lt;/span&gt;
+          &lt;input type="date" id="quoteDate" required&gt;
+        &lt;/label&gt;
+        &lt;label class="field"&gt;
+          &lt;span&gt;유효기간&lt;/span&gt;
+          &lt;input id="validity" maxlength="60" value="견적일로부터 1개월"&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;hr class="divider"&gt;
+      &lt;h2 class="section-title"&gt;
+        &lt;span&gt;&lt;span class="step"&gt;02&lt;/span&gt; 견적 품목&lt;/span&gt;
+        &lt;span class="muted"&gt;부가세 별도 단가&lt;/span&gt;
+      &lt;/h2&gt;
+      &lt;div id="items"&gt;&lt;/div&gt;
+      &lt;button type="button" id="addButton"&gt;＋ 품목 추가&lt;/button&gt;
+      &lt;p class="muted"&gt;
+        품목별 금액 = 수량 × 단가&lt;br&gt;
+        세액 = 품목별 금액의 10% (원 단위 반올림)&lt;br&gt;
+        최대 20개 품목을 입력할 수 있습니다.
+      &lt;/p&gt;
+      &lt;hr class="divider"&gt;
+      &lt;label class="field"&gt;
+        &lt;span&gt;견적 참고사항&lt;/span&gt;
+        &lt;textarea id="notes" maxlength="2000"&gt;1. 상기 금액은 부가세 포함 금액입니다.&#10;2. 상세 일정 및 납품 조건은 별도 협의합니다.&lt;/textarea&gt;
+      &lt;/label&gt;
+      &lt;p class="error" id="error" role="alert"&gt;&lt;/p&gt;
+      &lt;div class="actions"&gt;
+        &lt;button class="primary" type="submit"&gt;견적서 미리보기&lt;/button&gt;
+        &lt;button type="button" id="printButton"&gt;인쇄 / PDF 저장&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;p class="muted"&gt;
+        입력 내용은 서버에 저장되지 않습니다. 새로고침 전 PDF로 저장해 주세요. 공급자 정보는 교육용 가상 정보입니다.
+      &lt;/p&gt;
+    &lt;/form&gt;
+    &lt;section class="preview-area" aria-label="견적서 미리보기"&gt;
+      &lt;div class="preview-bar"&gt;
+        &lt;strong&gt;A4 견적서 미리보기&lt;/strong&gt;
+        &lt;span class="muted" id="status" aria-live="polite"&gt;입력한 내용이 바로 반영됩니다.&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="preview-scroll"&gt;
+        &lt;article class="paper" id="paper"&gt;
+          &lt;h2&gt;견적서&lt;/h2&gt;
+          &lt;div class="meta"&gt;
+            &lt;div class="meta-group"&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;수 신&lt;/span&gt;&lt;strong id="pRecipient"&gt;&lt;/strong&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;견적명&lt;/span&gt;&lt;span id="pTitle"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;견적날짜&lt;/span&gt;&lt;span id="pDate"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;유효기간&lt;/span&gt;&lt;span id="pValidity"&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="meta-group"&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;상 호&lt;/span&gt;&lt;strong id="sCompany"&gt;&lt;/strong&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;대 표&lt;/span&gt;&lt;span id="sOwner"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span&gt;사업자번호&lt;/span&gt;&lt;span id="sBusiness"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;사업장&lt;/span&gt;&lt;span id="sAddress"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span class="meta-label"&gt;연락처&lt;/span&gt;&lt;span id="sPhone"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="meta-line"&gt;&lt;span&gt;E-mail&lt;/span&gt;&lt;span id="sEmail"&gt;&lt;/span&gt;&lt;/div&gt;
+              &lt;div class="fake"&gt;※ 공급자 정보는 교육용 가상 데이터입니다.&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="total-banner"&gt;
+            &lt;b&gt;견적금액&lt;/b&gt;
+            &lt;strong&gt;&lt;span id="pKorean"&gt;&lt;/span&gt; ( ₩&lt;span id="pTotal"&gt;&lt;/span&gt; )&lt;/strong&gt;
+            &lt;span class="vat"&gt;※ 부가세 포함&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;table class="quote-table" aria-label="견적 품목 및 금액"&gt;
+            &lt;colgroup&gt;
+              &lt;col style="width:10%"&gt;&lt;col style="width:34%"&gt;&lt;col style="width:5.5%"&gt;
+              &lt;col style="width:12%"&gt;&lt;col style="width:13%"&gt;&lt;col style="width:11%"&gt;&lt;col style="width:14.5%"&gt;
+            &lt;/colgroup&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;th&gt;품목&lt;/th&gt;&lt;th&gt;세부내용&lt;/th&gt;&lt;th&gt;수량&lt;/th&gt;&lt;th&gt;단가&lt;/th&gt;&lt;th&gt;금액&lt;/th&gt;&lt;th&gt;세액&lt;/th&gt;&lt;th&gt;최종가&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody id="pItems"&gt;&lt;/tbody&gt;
+            &lt;tfoot&gt;
+              &lt;tr&gt;
+                &lt;td colspan="4" class="center"&gt;합 계&lt;/td&gt;
+                &lt;td class="num" id="pSupply"&gt;&lt;/td&gt;
+                &lt;td class="num" id="pTax"&gt;&lt;/td&gt;
+                &lt;td class="num" id="pGrand"&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tfoot&gt;
+          &lt;/table&gt;
+          &lt;table class="summary" aria-label="견적 합계"&gt;
+            &lt;tr&gt;&lt;td&gt;공급가&lt;/td&gt;&lt;td id="sSupply"&gt;&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;부가세&lt;/td&gt;&lt;td id="sTax"&gt;&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;소계&lt;/td&gt;&lt;td id="sTotal"&gt;&lt;/td&gt;&lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;section class="notes"&gt;
+            &lt;h3&gt;[ 견적 참고사항 ]&lt;/h3&gt;
+            &lt;div class="notes-body" id="pNotes"&gt;&lt;/div&gt;
+          &lt;/section&gt;
+          &lt;footer class="paper-footer"&gt;
+            &lt;span id="footerCompany"&gt;&lt;/span&gt;
+            &lt;span&gt;단위: 원 · 교육용 가상 견적서&lt;/span&gt;
+          &lt;/footer&gt;
+        &lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;script&gt;
+    const SUPPLIER = &lt;?!= supplierJson ?&gt;;
+    const $ = id =&gt; document.getElementById(id);
+    const fmt = value =&gt; value.toLocaleString('ko-KR');
+    let itemSequence = 0;
+    function todayString() {
+      const d = new Date();
+      return (d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'));
+    }
+    function koreanMoney(value) {
+      if (!value) return '영';
+      const digits = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+      const units = ['', '십', '백', '천'];
+      const groups = ['', '만', '억', '조'];
+      let result = '', groupIndex = 0;
+      while (value &gt; 0) {
+        let part = value % 10000, text = '';
+        for (let i = 0; i &lt; 4; i++) {
+          const n = part % 10;
+          if (n) text = ((n === 1 &amp;&amp; i &gt; 0) ? '' : digits[n]) + units[i] + text;
+          part = Math.floor(part / 10);
+        }
+        if (text) result = text + groups[groupIndex] + result;
+        value = Math.floor(value / 10000);
+        groupIndex++;
+      }
+      return result;
+    }
+    function addItem(data = {}) {
+      if ($('items').children.length &gt;= 20) return;
+      const id = ++itemSequence;
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      card.innerHTML = `
+        &lt;div class="item-head"&gt;
+          &lt;strong class="item-number"&gt;&lt;/strong&gt;
+          &lt;button type="button" class="remove"&gt;삭제&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;label class="field"&gt;
+          &lt;span&gt;품목 *&lt;/span&gt;
+          &lt;input id="name-${id}" data-key="name" required maxlength="60" placeholder="예: 실습키트"&gt;
+        &lt;/label&gt;
+        &lt;label class="field"&gt;
+          &lt;span&gt;세부내용&lt;/span&gt;
+          &lt;input id="detail-${id}" data-key="detail" maxlength="200" placeholder="예: IoT 스마트홈 ESP32 KIT"&gt;
+        &lt;/label&gt;
+        &lt;div class="twocol"&gt;
+          &lt;label class="field"&gt;
+            &lt;span&gt;수량 *&lt;/span&gt;
+            &lt;input id="quantity-${id}" data-key="quantity" type="number" required min="0.01" max="1000000" step="0.01" value="1"&gt;
+          &lt;/label&gt;
+          &lt;label class="field"&gt;
+            &lt;span&gt;단가 (원) *&lt;/span&gt;
+            &lt;input id="price-${id}" data-key="price" type="number" required min="0" max="1000000000" step="1" value="0"&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+      `;
+      ['name', 'detail', 'quantity', 'price'].forEach(key =&gt; {
+        if (data[key] !== undefined) card.querySelector(`[data-key="${key}"]`).value = data[key];
+      });
+      card.querySelector('.remove').addEventListener('click', () =&gt; {
+        if ($('items').children.length &lt;= 1) return;
+        card.remove(); renumber(); updatePreview();
+      });
+      $('items').appendChild(card);
+      renumber();
+    }
+    function renumber() {
+      const cards = [...$('items').children];
+      cards.forEach((card, i) =&gt; {
+        card.querySelector('.item-number').textContent = '품목 ' + (i + 1);
+        card.querySelector('.remove').disabled = cards.length === 1;
+      });
+      $('addButton').disabled = cards.length &gt;= 20;
+    }
+    function getItems() {
+      return [...$('items').children].map(card =&gt; {
+        const get = key =&gt; card.querySelector(`[data-key="${key}"]`).value;
+        const quantity = Number(get('quantity')), price = Number(get('price'));
+        const amount = Math.round(quantity * price);
+        const tax = Math.round(amount * 0.1);
+        return { name: get('name').trim(), detail: get('detail').trim(), quantity, price, amount, tax, total: amount + tax };
+      });
+    }
+    function put(id, value) { $(id).textContent = value; }
+    function updatePreview() {
+      const items = getItems();
+      const numericValid = items.every(x =&gt; Number.isFinite(x.quantity) &amp;&amp; x.quantity &gt; 0 &amp;&amp; x.quantity &lt;= 1000000 &amp;&amp; Number.isFinite(x.price) &amp;&amp; x.price &gt;= 0 &amp;&amp; x.price &lt;= 1000000000 &amp;&amp; Number.isInteger(x.price));
+      const total = items.reduce((sum, item) =&gt; sum + item.total, 0);
+      if (!numericValid || !Number.isSafeInteger(total) || total &gt; 9999999999999) {
+        put('error', '수량과 단가를 확인해 주세요. 총 견적금액은 10조 원 미만이어야 합니다.');
+        put('status', '입력 오류가 있어 이전 미리보기를 표시하고 있습니다.');
+        return false;
+      }
+      put('error', ''); put('status', '입력한 내용이 바로 반영됩니다.');
+      put('pRecipient', $('recipient').value.trim() || '수신처를 입력해 주세요');
+      put('pTitle', $('quoteTitle').value.trim() || '견적명을 입력해 주세요');
+      const date = $('quoteDate').value;
+      put('pDate', date ? date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$1년 $2월 $3일') : '');
+      put('pValidity', $('validity').value);
+      const supply = items.reduce((sum, item) =&gt; sum + item.amount, 0);
+      const tax = items.reduce((sum, item) =&gt; sum + item.tax, 0);
+      put('pKorean', '일금 ' + koreanMoney(total) + '원정');
+      ['pTotal', 'pGrand', 'sTotal'].forEach(id =&gt; put(id, fmt(total)));
+      ['pSupply', 'sSupply'].forEach(id =&gt; put(id, fmt(supply)));
+      ['pTax', 'sTax'].forEach(id =&gt; put(id, fmt(tax)));
+      put('pNotes', $('notes').value);
+      const body = $('pItems');
+      body.replaceChildren();
+      function appendRow(values, blank = false, note = false) {
+        const tr = document.createElement('tr');
+        values.forEach((value, i) =&gt; {
+          const td = document.createElement('td');
+          td.textContent = value;
+          td.className = i &gt;= 2 ? 'num' : (i === 0 ? 'center' : '');
+          if (note &amp;&amp; i === 1) td.className = 'empty-note';
+          tr.appendChild(td);
+        });
+        body.appendChild(tr);
+      }
+      items.forEach(item =&gt; {
+        appendRow([item.name, item.detail, fmt(item.quantity), fmt(item.price), fmt(item.amount), fmt(item.tax), fmt(item.total)]);
+      });
+      for (let i = items.length; i &lt; 10; i++) {
+        appendRow(['', i === items.length ? '이하 여백' : '', '', '', '', '', ''], true, i === items.length);
+      }
+      return true;
+    }
+    function sample() {
+      $('recipient').value = '주식회사 샘플 교육사업팀';
+      $('quoteTitle').value = 'IoT 스마트홈 ESP32 활용교육';
+      $('quoteDate').value = todayString();
+      $('validity').value = '견적일로부터 1개월';
+      $('notes').value = '1. 상기 금액은 부가세 포함 금액입니다.\n2. 상세 일정 및 납품 조건은 별도 협의합니다.';
+      $('items').replaceChildren();
+      addItem({ name: '실습키트', detail: 'IoT 스마트홈 ESP32 KIT', quantity: 24, price: 110000 });
+      addItem({ name: '실습계정', detail: 'Google AI Pro 실습계정', quantity: 23, price: 30000 });
+      updatePreview();
+    }
+    function validateAndUpdate() {
+      if (!$('quoteForm').reportValidity()) return false;
+      if (!$('recipient').value.trim() || !$('quoteTitle').value.trim() || getItems().some(item =&gt; !item.name)) {
+        put('error', '수신, 견적명, 품목에는 공백 이외의 내용을 입력해 주세요.');
+        return false;
+      }
+      return updatePreview();
+    }
+    [['sCompany', 'company'], ['sOwner', 'owner'], ['sBusiness', 'businessNumber'], ['sAddress', 'address'], ['sPhone', 'phone'], ['sEmail', 'email'], ['footerCompany', 'company']].forEach(([id, key]) =&gt; {
+      put(id, SUPPLIER[key]);
+    });
+    $('quoteDate').value = todayString();
+    addItem(); updatePreview();
+    $('quoteForm').addEventListener('input', updatePreview);
+    $('quoteForm').addEventListener('submit', event =&gt; {
+      event.preventDefault();
+      if (validateAndUpdate()) $('paper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    $('addButton').addEventListener('click', () =&gt; { addItem(); updatePreview(); });
+    $('sampleButton').addEventListener('click', sample);
+    $('printButton').addEventListener('click', () =&gt; {
+      if (!validateAndUpdate()) return;
+      document.title = '견적서_' + $('quoteTitle').value.trim() + '_' + $('quoteDate').value;
+      window.print();
+    });
+    window.addEventListener('beforeprint', updatePreview);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="d3-card" style="margin-top:20px">
+    <h3>수업 최종 점검표 (Checklist)</h3>
+    <p>실습 1과 실습 2를 모두 완료한 후 다음 사항을 확인해 보세요.</p>
+    <label class="checkrow"><input type="checkbox"> 구글 시트에서 <code>createQuotation</code> 함수를 실행했을 때 견적서 시트가 깔끔하게 생성된다.</label>
+    <label class="checkrow"><input type="checkbox"> 시트에서 수량(B11 셀)을 바꿨을 때 수식이 자동으로 반응하여 총액이 재계산된다.</label>
+    <label class="checkrow"><input type="checkbox"> 웹앱 배포 URL에서 [예시 불러오기]를 눌렀을 때 A4 견적서 미리보기가 렌더링된다.</label>
+    <label class="checkrow"><input type="checkbox"> [인쇄 / PDF 저장] 버튼을 눌러 PDF 파일로 견적서를 정상적으로 저장할 수 있다.</label>
+  </div>
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="day2" class="mode"><div class="d2">
@@ -1352,12 +2074,13 @@ const d3Titles = {
   1: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 1 · Git·Node 준비',
   2: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 2 · 문의 접수 & 대시보드',
   3: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 3 · IDE와 GitHub 연결',
-  4: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 4 · GitHub와 Vercel 배포'
+  4: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 4 · GitHub와 Vercel 배포',
+  5: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 5 · 견적서 Apps Script'
 };
 
 function showD3Lesson(n) {
   d3Lesson = n;
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 5; i++) {
     const p = get('day3_panel' + i);
     if (p) p.hidden = i !== n;
   }
@@ -1429,7 +2152,7 @@ if(new URLSearchParams(window.location.search).get('day')==='3'){
   get('courseDay').value='3';
   get('courseDay').dispatchEvent(new Event('change'));
   const reqLesson = Number(new URLSearchParams(window.location.search).get('lesson'));
-  if ([1, 2, 3, 4].includes(reqLesson)) showD3Lesson(reqLesson);
+  if ([1, 2, 3, 4, 5].includes(reqLesson)) showD3Lesson(reqLesson);
 }
 if(new URLSearchParams(window.location.search).get('day')==='2'){get('courseDay').value='2';get('courseDay').dispatchEvent(new Event('change'));const requested=Number(new URLSearchParams(window.location.search).get('lesson'));if([1,2,3,4].includes(requested))showLesson(requested,false);}
 })();
