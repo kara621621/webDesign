@@ -64,7 +64,7 @@
 @media(max-width:700px){.day2-nav #courseDay{width:100%;margin:0;flex-basis:100%}.day2-nav [data-d2-step]{flex:1;text-align:center}.d2{padding:26px 18px 45px}.d2-layout{grid-template-columns:minmax(0,1fr)}.d2-box{padding:20px}.d2-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.d2-rail{gap:5px}.d2-rail span{font-size:10px;padding:6px 9px}.d2-fix{flex-direction:column}.d2-next{margin-left:0}.switcher [data-d2-step]{padding:8px 10px;font-size:12px}.d2-thumb{height:132px}.d2-end{align-items:start}}
 </style><link rel="stylesheet" href="stitch-workshop.css"></head><body>
 <div class="workshop"><b>AI WEBSITE WORKSHOP · DAY 1 / LESSONS 1–3</b><small>교육용 가상 기업 · 실제 영업 및 문의 접수 없음</small></div>
-<div class="switcher" aria-label="수업 화면 선택"><label class="label" for="courseDay">수업 선택</label><select id="courseDay" aria-label="수업 일차"><option value="1">1일차 · 기획하기</option><option value="2">2일차 · 만들기</option><option value="3">3일차 · 연결·공개</option></select><span class="tab" id="day3LessonLabel" hidden>1차시 Git과 Node.js</span><button type="button" class="tab" data-d3-step="1" aria-pressed="true" hidden>1차시 Git과 Node.js</button><button type="button" class="tab" data-d3-step="2" aria-pressed="false" hidden>2차시 문의 접수 & 대시보드</button><button class="tab" data-mode="company" aria-pressed="true">완성 예시</button><button class="tab" data-mode="compare" aria-pressed="false">수정 전후 비교</button><button class="tab" data-mode="edit" aria-pressed="false">1차시 소개</button><button class="tab" data-mode="lesson2" aria-pressed="false">2차시 구성</button><button class="tab" data-mode="lesson3" aria-pressed="false">3차시 PRD</button><button type="button" class="tab" data-d2-step="1" aria-pressed="true" hidden>1교시 홈페이지</button><button type="button" class="tab" data-d2-step="2" aria-pressed="false" hidden>2교시 디자인</button><button type="button" class="tab" data-d2-step="3" aria-pressed="false" hidden>3교시 Stitch</button><button type="button" class="tab" data-d2-step="4" aria-pressed="false" hidden>4교시 문의</button></div>
+<div class="switcher" aria-label="수업 화면 선택"><label class="label" for="courseDay">수업 선택</label><select id="courseDay" aria-label="수업 일차"><option value="1">1일차 · 기획하기</option><option value="2">2일차 · 만들기</option><option value="3">3일차 · 연결·공개</option></select><span class="tab" id="day3LessonLabel" hidden>1차시 Git과 Node.js</span><button type="button" class="tab" data-d3-step="1" aria-pressed="true" hidden>1차시 Git과 Node.js</button><button type="button" class="tab" data-d3-step="2" aria-pressed="false" hidden>2차시 문의 접수 & 대시보드</button><button type="button" class="tab" data-d3-step="3" aria-pressed="false" hidden>3차시 IDE와 GitHub 연결</button><button type="button" class="tab" data-d3-step="4" aria-pressed="false" hidden>4차시 GitHub와 Vercel 배포</button><button class="tab" data-mode="company" aria-pressed="true">완성 예시</button><button class="tab" data-mode="compare" aria-pressed="false">수정 전후 비교</button><button class="tab" data-mode="edit" aria-pressed="false">1차시 소개</button><button class="tab" data-mode="lesson2" aria-pressed="false">2차시 구성</button><button class="tab" data-mode="lesson3" aria-pressed="false">3차시 PRD</button><button type="button" class="tab" data-d2-step="1" aria-pressed="true" hidden>1교시 홈페이지</button><button type="button" class="tab" data-d2-step="2" aria-pressed="false" hidden>2교시 디자인</button><button type="button" class="tab" data-d2-step="3" aria-pressed="false" hidden>3교시 Stitch</button><button type="button" class="tab" data-d2-step="4" aria-pressed="false" hidden>4교시 문의</button></div>
 <main>
 <div id="company" class="mode active"><div class="wrap">
 <nav class="nav" aria-label="예시 기업 메뉴"><div class="brand"><span class="mark" aria-hidden="true"></span>모아워크</div><div class="navlinks"><a href="#about">모아워크 소개</a><a href="#service">서비스</a><a href="#faq">궁금한 점</a><a class="smallbtn" href="#contact">상담 준비하기 ↗</a></div></nav>
@@ -701,6 +701,337 @@ Write-Host "바탕화면에 관리자 바로가기 아이콘이 성공적으로 
 
 </div>
 </div>
+
+<!-- 3일차 3차시: Antigravity IDE를 GitHub에 연결하기 -->
+<div id="day3_panel3" class="d3-panel" hidden>
+<div class="d3 d3-l2">
+<span class="badge">DAY 03 / LESSON 03 · 버전 관리 & 클라우드 연동</span>
+<h1>Antigravity IDE를<br>GitHub에 연결하기</h1>
+<p class="intro">내 컴퓨터(Antigravity IDE)에서 제작한 소스코드를 안전하게 클라우드 저장소(GitHub)에 백업하고 전 세계와 협업하기 위한 Git 연동 절차를 단계별로 실습합니다.</p>
+
+<div class="feedback">
+<strong>3차시 학습 목표</strong>
+<p>Git 기본 신원 등록 → 로컬 저장소 초기화(git init) → GitHub 원격 저장소 생성 → Antigravity와 원격 저장소 연결 및 첫 푸시(push) 완료</p>
+</div>
+
+<!-- 4단계 플로우 바 -->
+<div class="pipeline-flow">
+  <div class="pipeline-node"><span class="num">STEP 01</span><strong>Git 신원 등록</strong><small>user.name & email</small></div>
+  <div class="pipeline-node"><span class="num">STEP 02</span><strong>로컬 저장소 초기화</strong><small>git init & commit</small></div>
+  <div class="pipeline-node"><span class="num">STEP 03</span><strong>GitHub 레포 생성</strong><small>New Repository</small></div>
+  <div class="pipeline-node"><span class="num">STEP 04</span><strong>원격 연결 및 푸시</strong><small>git remote & push</small></div>
+</div>
+
+<nav class="checklist" aria-label="3차시 학습 목차">
+  <a href="#d3l3Step1">1교시 · Git 신원 등록</a>
+  <a href="#d3l3Step2">2교시 · 로컬 저장소 초기화</a>
+  <a href="#d3l3Step3">3교시 · GitHub 레포 생성</a>
+  <a href="#d3l3Step4">4교시 · 원격 연결 및 푸시</a>
+</nav>
+
+<!-- 1교시 -->
+<div class="d3-section" id="d3l3Step1">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">1</span>
+      <div>
+        <h2>1교시 · 내 컴퓨터에 Git 신원(사용자 정보) 등록하기</h2>
+        <p class="hint" style="margin:4px 0 0">코드를 누가 작성하고 수정했는지 기록하기 위해 내 이름과 이메일을 등록합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 Antigravity IDE에서 터미널 여는 방법</strong>
+    키보드에서 <code>Ctrl + `</code> (물결표 자판) 키를 누르거나, 상단 메뉴에서 <strong>[Terminal] → [New Terminal]</strong>을 클릭하면 하단에 터미널 창이 열립니다.
+  </div>
+
+  <div class="d3-card">
+    <h3>Git 전역 사용자 설정 명령어</h3>
+    <p>아래 명령어의 따옴표 안 내용을 본인의 이름(또는 닉네임)과 GitHub 가입 이메일로 바꿔서 터미널에 한 줄씩 입력합니다.</p>
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">Git 사용자 설정 명령어</span>
+        <button type="button" class="copy-btn" data-copy-target="codeGitConfig">명령어 복사 ↗</button>
+      </div>
+      <pre><code id="codeGitConfig"># 1. 내 이름(닉네임) 등록
+git config --global user.name "홍길동"
+
+# 2. 내 GitHub 가입 이메일 등록
+git config --global user.email "myemail@gmail.com"
+
+# 3. 등록된 정보 확인 (목록에 이름과 이메일이 나오면 성공)
+git config --list</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- 2교시 -->
+<div class="d3-section" id="d3l3Step2">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">2</span>
+      <div>
+        <h2>2교시 · Antigravity 프로젝트 Git 초기화 및 첫 커밋(기록)</h2>
+        <p class="hint" style="margin:4px 0 0">현재 작업 중인 홈페이지 폴더를 Git이 추적하는 버전 관리 폴더로 선언하고 첫 스냅샷을 찍습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-grid">
+    <div class="d3-card">
+      <h3>① Git 3단계 핵심 개념 이해하기</h3>
+      <ul>
+        <li><strong>git init</strong>: 현재 폴더에 <code>.git</code> 숨김 폴더를 만들어 버전 관리를 시작합니다.</li>
+        <li><strong>git add .</strong>: 작업한 모든 파일들을 커밋할 '장바구니(스테이징 영역)'에 담습니다.</li>
+        <li><strong>git commit -m "메시지"</strong>: 장바구니에 담긴 파일들을 하나의 영구적인 '사진(버전)'으로 기록합니다.</li>
+      </ul>
+    </div>
+    <div class="d3-card">
+      <h3>② 터미널 실행 명령어</h3>
+      <div class="code-card">
+        <div class="code-top">
+          <span class="code-title">Git 초기화 및 첫 커밋</span>
+          <button type="button" class="copy-btn" data-copy-target="codeGitInit">명령어 복사 ↗</button>
+        </div>
+        <pre><code id="codeGitInit"># 1. Git 저장소 초기화
+git init
+
+# 2. 모든 파일 스테이징 영역에 추가
+git add .
+
+# 3. 첫 번째 커밋 기록
+git commit -m "feat: 모아워크 홈페이지 첫 제작 완료"</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3교시 -->
+<div class="d3-section" id="d3l3Step3">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">3</span>
+      <div>
+        <h2>3교시 · GitHub 웹사이트에서 새 원격 저장소(Repository) 만들기</h2>
+        <p class="hint" style="margin:4px 0 0">코드를 클라우드에 올려둘 내 전용 빈 저장소를 GitHub에 생성합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-card">
+    <h3>저장소 생성 4단계 순서</h3>
+    <ol class="d3-flow">
+      <li><strong>GitHub 로그인</strong><small><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a> 접속 후 로그인</small></li>
+      <li><strong>새 저장소 만들기</strong><small>우측 상단 <strong>[+]</strong> → <strong>[New repository]</strong></small></li>
+      <li><strong>저장소 이름 입력</strong><small>Repository name에 <code>webDesign</code> 입력</small></li>
+      <li><strong>빈 저장소로 생성</strong><small>Add README 체크 <strong>해제</strong> 후 Create 클릭</small></li>
+    </ol>
+    <div class="info-box" style="margin-top:16px">
+      <strong>⚠️ 초보자가 가장 많이 하는 실수 주의!</strong>
+      저장소를 만들 때 <code>Add a README file</code> 체크박스를 체크하면 원격 저장소에 파일이 미리 생겨버려 로컬 코드와 충돌이 발생할 수 있습니다. 
+      반드시 <strong>체크를 모두 해제한 상태(완전 빈 저장소)</strong>로 [Create repository]를 눌러주세요!
+    </div>
+  </div>
+</div>
+
+<!-- 4교시 -->
+<div class="d3-section" id="d3l3Step4">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">4</span>
+      <div>
+        <h2>4교시 · Antigravity IDE와 원격 저장소 연결 및 첫 푸시(push)</h2>
+        <p class="hint" style="margin:4px 0 0">로컬 컴퓨터의 Git과 GitHub 원격 저장소를 연결하고, 첫 번째 코드를 클라우드로 전송합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-card">
+    <h3>원격 연결 및 푸시 명령어</h3>
+    <p>GitHub 저장소 페이지에 표시된 HTTPS 주소를 복사하여 아래 명령어에 대입해 실행합니다.</p>
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">원격 연결 및 푸시 명령어</span>
+        <button type="button" class="copy-btn" data-copy-target="codeGitPush">명령어 복사 ↗</button>
+      </div>
+      <pre><code id="codeGitPush"># 1. 기본 브랜치 이름을 main으로 지정
+git branch -M main
+
+# 2. 내 GitHub 원격 저장소 주소 연결 (본인의 GitHub 주소로 변경)
+git remote add origin https://github.com/내아이디/webDesign.git
+
+# 3. 원격 저장소로 첫 푸시 실행
+git push -u origin main</code></pre>
+    </div>
+  </div>
+
+  <div class="d3-grid" style="margin-top:20px">
+    <article class="d3-card">
+      <h3>🔑 첫 푸시 시 로그인 창이 나타날 때</h3>
+      <p>브라우저 인증 창(Sign in with your browser)이 뜨면 <strong>[Sign in]</strong>을 누르고 GitHub 로그인 권한을 허용해주면 자동으로 인증이 완료됩니다.</p>
+    </article>
+    <article class="d3-card">
+      <h3>🛠️ 자주 발생하는 오류 해결 팁</h3>
+      <p><code>remote origin already exists</code> 오류가 뜨면 이미 이전 주소가 등록된 상태입니다. 아래 명령어로 기존 연결을 지우고 다시 연결하세요.</p>
+      <pre><code>git remote remove origin</code></pre>
+    </article>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- 3일차 4차시: GitHub와 Vercel 연결하여 원클릭 자동 배포하기 -->
+<div id="day3_panel4" class="d3-panel" hidden>
+<div class="d3 d3-l2">
+<span class="badge">DAY 03 / LESSON 04 · 클라우드 배포 & 자동화</span>
+<h1>GitHub와 Vercel을 연결하여<br>원클릭 무료 자동 배포하기</h1>
+<p class="intro">GitHub에 올린 웹사이트 코드를 전 세계 누구나 24시간 접속할 수 있도록 Vercel과 연동하여 고유한 무료 HTTPS 주소를 발급받고, 코드 수정 시 자동으로 배포되는 최신 CI/CD 환경을 구축합니다.</p>
+
+<div class="feedback">
+<strong>4차시 학습 목표</strong>
+<p>Vercel 가입(GitHub 연동) → 프로젝트 Import → 원클릭 Deploy(HTTPS 도메인 발급) → 수정 후 git push 시 실시간 자동 배포되는 마법 체감</p>
+</div>
+
+<!-- 4단계 플로우 바 -->
+<div class="pipeline-flow">
+  <div class="pipeline-node"><span class="num">STEP 01</span><strong>Vercel 가입</strong><small>GitHub 소셜 로그인</small></div>
+  <div class="pipeline-node"><span class="num">STEP 02</span><strong>저장소 Import</strong><small>내 GitHub 레포 선택</small></div>
+  <div class="pipeline-node"><span class="num">STEP 03</span><strong>원클릭 Deploy</strong><small>30초 만에 URL 발급</small></div>
+  <div class="pipeline-node"><span class="num">STEP 04</span><strong>실시간 자동 배포</strong><small>push = 자동 반영</small></div>
+</div>
+
+<nav class="checklist" aria-label="4차시 학습 목차">
+  <a href="#d3l4Step1">1교시 · Vercel 가입 및 연동</a>
+  <a href="#d3l4Step2">2교시 · 저장소 Import</a>
+  <a href="#d3l4Step3">3교시 · 원클릭 배포(Deploy)</a>
+  <a href="#d3l4Step4">4교시 · 실시간 자동 배포(CI/CD)</a>
+</nav>
+
+<!-- 1교시 -->
+<div class="d3-section" id="d3l4Step1">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">1</span>
+      <div>
+        <h2>1교시 · Vercel 가입 및 GitHub 소셜 로그인 연동</h2>
+        <p class="hint" style="margin:4px 0 0">Vercel이 내 GitHub 저장소의 코드를 실시간으로 읽어갈 수 있도록 GitHub 계정으로 가입합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-card">
+    <h3>가입 순서 안내</h3>
+    <ol class="d3-flow">
+      <li><strong>Vercel 접속</strong><small><a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a> 사이트 접속</small></li>
+      <li><strong>Sign Up 클릭</strong><small>우측 상단의 회원가입 버튼 클릭</small></li>
+      <li><strong>GitHub로 계속</strong><small>반드시 <strong>Continue with GitHub</strong> 선택</small></li>
+      <li><strong>권한 승인</strong><small>Authorize Vercel 버튼 클릭하여 승인</small></li>
+    </ol>
+    <div class="info-box" style="margin-top:16px">
+      <strong>💡 왜 이메일 대신 GitHub로 가입하나요?</strong>
+      GitHub로 가입해야 Vercel이 내 저장소 목록을 자동으로 불러오고, 코드가 수정되어 푸시될 때마다 스스로 알아채서 1분 만에 웹사이트를 자동 갱신(CI/CD)할 수 있기 때문입니다.
+    </div>
+  </div>
+</div>
+
+<!-- 2교시 -->
+<div class="d3-section" id="d3l4Step2">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">2</span>
+      <div>
+        <h2>2교시 · 내 GitHub 저장소 불러오기 (Import)</h2>
+        <p class="hint" style="margin:4px 0 0">3차시에서 GitHub에 올린 내 웹사이트 저장소를 Vercel 프로젝트로 등록합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-card">
+    <h3>프로젝트 불러오기 3단계</h3>
+    <ol class="d3-flow">
+      <li><strong>새 프로젝트 추가</strong><small>대시보드에서 <strong>[Add New...]</strong> → <strong>[Project]</strong> 클릭</small></li>
+      <li><strong>저장소 검색</strong><small>목록에서 <code>webDesign</code>(내 저장소) 찾기</small></li>
+      <li><strong>Import 클릭</strong><small>해당 저장소 우측의 파란색 <strong>[Import]</strong> 버튼 클릭</small></li>
+      <li><strong>설정 확인</strong><small>프로젝트 이름 확인 후 배포 준비</small></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 3교시 -->
+<div class="d3-section" id="d3l4Step3">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">3</span>
+      <div>
+        <h2>3교시 · 원클릭 배포 (Deploy) & 전 세계 공개 주소 확인</h2>
+        <p class="hint" style="margin:4px 0 0">클릭 한 번으로 전 세계에 서비스되는 고유한 HTTPS 웹 주소를 생성합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-grid">
+    <div class="d3-card">
+      <h3>① 배포 버튼 클릭하기</h3>
+      <p>별도의 복잡한 서버 설정(빌드 명령 등)을 건드릴 필요가 없습니다. 정적 HTML 사이트는 기본 설정 그대로 맨 아래의 <strong>[Deploy]</strong> 버튼을 누르기만 하면 됩니다.</p>
+      <div style="background:#eaf0df;padding:16px;border-radius:10px;margin-top:12px;font-size:14px">
+        ⏱️ 약 <strong>20초~30초</strong> 동안 빌드가 진행되며 불꽃놀이 축하 화면(Congratulations!)이 나타납니다.
+      </div>
+    </div>
+    <div class="d3-card">
+      <h3>② 나만의 고유 도메인 주소 확인</h3>
+      <p>배포가 끝나면 화면 상단에 나만의 고유한 HTTPS 웹사이트 주소가 발급됩니다.</p>
+      <div style="background:#193d36;color:#d5f783;padding:16px;border-radius:10px;margin-top:12px;font-family:Consolas,monospace;font-size:15px">
+        🌐 https://my-webdesign-alpha.vercel.app
+      </div>
+      <p class="hint" style="margin-top:8px">스마트폰이나 다른 컴퓨터에서 이 주소를 입력하면 방금 만든 홈페이지가 실제로 열립니다!</p>
+    </div>
+  </div>
+</div>
+
+<!-- 4교시 -->
+<div class="d3-section" id="d3l4Step4">
+  <div class="step-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="step-number">4</span>
+      <div>
+        <h2>4교시 · 수정하고 푸시하면 끝! 실시간 자동 배포(CI/CD)의 마법</h2>
+        <p class="hint" style="margin:4px 0 0">앞으로는 Vercel 홈페이지에 들어갈 필요 없이, Antigravity에서 git push만 하면 1분 안에 자동 반영됩니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d3-card">
+    <h3>홈페이지 수정 후 실시간 반영 3단계 명령어</h3>
+    <p>홈페이지 글자나 디자인을 고친 후 터미널에 아래 3줄만 입력하면 전 세계 웹사이트가 즉시 최신 상태로 바뀝니다.</p>
+    <div class="code-card">
+      <div class="code-top">
+        <span class="code-title">실시간 자동 배포 3단계 명령어</span>
+        <button type="button" class="copy-btn" data-copy-target="codeAutoDeploy">명령어 복사 ↗</button>
+      </div>
+      <pre><code id="codeAutoDeploy"># 1. 수정한 파일 모두 담기
+git add .
+
+# 2. 수정 내용 기록
+git commit -m "update: 홈페이지 메인 문구 수정"
+
+# 3. GitHub로 푸시 (푸시되는 즉시 Vercel이 1분 안에 자동 재배포)
+git push origin main</code></pre>
+    </div>
+  </div>
+
+  <div class="d3-card" style="margin-top:20px">
+    <h3>수업 최종 점검표 (Checklist)</h3>
+    <p>Git, GitHub, Vercel이 모두 연결되었는지 최종 점검해 보세요.</p>
+    <label class="checkrow"><input type="checkbox"> Antigravity 터미널에서 <code>git push origin main</code>을 실행하면 GitHub에 코드가 올라간다.</label>
+    <label class="checkrow"><input type="checkbox"> Vercel 대시보드에서 초록색 <code>Ready</code> 표시와 함께 나만의 <code>.vercel.app</code> 주소가 동작한다.</label>
+    <label class="checkrow"><input type="checkbox"> 코드를 조금 수정한 후 다시 푸시했을 때, 1분 안에 Vercel 웹사이트에 자동으로 바뀐 내용이 반영된다.</label>
+  </div>
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="day2" class="mode"><div class="d2">
@@ -969,19 +1300,23 @@ get('d2Reuse').addEventListener('click',()=>{const source=get('l3_export').value
 get('d2Upload').addEventListener('click',()=>get('d2File').click());get('d2File').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>500000){say('500KB 이하의 PRD TXT 파일을 선택하세요.');return;}if(get('d2Prd').value.trim()&&!confirm('현재 PRD를 선택한 파일로 바꿀까요?'))return;get('d2Prd').value=await file.text();renderBuild();say(file.name+' 불러옴');}catch{say('파일을 읽지 못했습니다. 내용을 직접 붙여 넣으세요.');}finally{e.target.value='';}});
 document.querySelectorAll('[data-d2-step]').forEach(b=>b.addEventListener('click',()=>showLesson(Number(b.dataset.d2Step))));document.querySelectorAll('[data-d2-go]').forEach(b=>b.addEventListener('click',()=>showLesson(Number(b.dataset.d2Go))));
 let d3Lesson = 1;
+const d3Titles = {
+  1: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 1 · Git·Node 준비',
+  2: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 2 · 문의 접수 & 대시보드',
+  3: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 3 · IDE와 GitHub 연결',
+  4: 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 4 · GitHub와 Vercel 배포'
+};
+
 function showD3Lesson(n) {
   d3Lesson = n;
-  const p1 = get('day3_panel1'), p2 = get('day3_panel2');
-  if (p1 && p2) {
-    p1.hidden = n !== 1;
-    p2.hidden = n !== 2;
+  for (let i = 1; i <= 4; i++) {
+    const p = get('day3_panel' + i);
+    if (p) p.hidden = i !== n;
   }
   document.querySelectorAll('[data-d3-step]').forEach(b => {
     b.setAttribute('aria-pressed', String(Number(b.dataset.d3Step) === n));
   });
-  document.querySelector('.workshop b').textContent = n === 1 
-    ? 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 1 · 준비' 
-    : 'AI WEBSITE WORKSHOP · DAY 3 / LESSON 2 · 문의 접수 & 대시보드';
+  document.querySelector('.workshop b').textContent = d3Titles[n] || ('AI WEBSITE WORKSHOP · DAY 3 / LESSON ' + n);
   window.scrollTo(0, 0);
 }
 
@@ -1046,7 +1381,7 @@ if(new URLSearchParams(window.location.search).get('day')==='3'){
   get('courseDay').value='3';
   get('courseDay').dispatchEvent(new Event('change'));
   const reqLesson = Number(new URLSearchParams(window.location.search).get('lesson'));
-  if (reqLesson === 2) showD3Lesson(2);
+  if ([1, 2, 3, 4].includes(reqLesson)) showD3Lesson(reqLesson);
 }
 if(new URLSearchParams(window.location.search).get('day')==='2'){get('courseDay').value='2';get('courseDay').dispatchEvent(new Event('change'));const requested=Number(new URLSearchParams(window.location.search).get('lesson'));if([1,2,3,4].includes(requested))showLesson(requested,false);}
 })();
